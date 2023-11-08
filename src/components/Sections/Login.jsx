@@ -1,38 +1,55 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 
 export default function Login() {
+  const [showSignUp, setShowSignUp] = useState(false);
+
+  const handleToggle = () => {
+    setShowSignUp(!showSignUp);
+  };
+
     return(
-        <Wrapper id="login">
-            <div className="lightBg">
-                <div className="container">
-                    <HeaderInfo>
-                        <br />
-                        <h1 className="font40 extraBold">Login/ SignUp</h1>
-                        <p className="font13">
-                        Unlock the full potential of our platform. 
-                        <br />
-                        Sign up or log in now to access personalized financial insights and expert guidance tailored just for you.
-                        </p>
-                    </HeaderInfo>
-                    <div className="row" style={{paddingBottom: "30px"}}>
-                        <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-                            <Form>
-                                <label className="font13">Name: </label>
-                                <input type="text" id="fname" name="fname" className="font20 extraBold" />
-                                <label className="font13">Email: </label>
-                                <input type="email" id="email" name="email" className="font20 extraBold" />
-                                <label className="font13">Password: </label>
-                                <input type="password" id="subject" name="subject" className="font20 extraBold"/>
-                            </Form>
-                            <SumbitWrapper className="flex">
-                            <ButtonInput type="submit" value="Submit" className="pointer animate radius8" style={{ maxWidth: "220px" }} />
-                            </SumbitWrapper>
-                        </div>
-                    </div>
-                </div>
+      <Wrapper id="login">
+      <div className="lightBg">
+        <div className="container">
+          <HeaderInfo>
+            <br />
+            <h1 className="font40 extraBold">Login/ Sign Up</h1>
+            <p className="font13">
+              Unlock the full potential of our platform. <br />
+              Sign up or log in now to access personalized financial insights and expert guidance tailored just for you.
+            </p>
+          </HeaderInfo>
+          <div className="row" style={{ paddingBottom: "30px" }}>
+            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+              <Form>
+                {showSignUp && (
+                  <>
+                    <label className="font13">Name: </label>
+                    <input type="text" id="fname" name="fname" className="font15 extraBold" />
+                    <label className="font13">Confirm Password: </label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" className="font15 extraBold" />
+                  </>
+                )}
+                <label className="font13">Email: </label>
+                <input type="email" id="email" name="email" className="font15 extraBold" />
+                <label className="font13">Password: </label>
+                <input type="password" id="subject" name="subject" className="font15 extraBold" />
+              </Form>
+              <div>
+                <button style={{border:'none', backgroundColor: 'transparent', marginBottom: '12px'}} className="font15 extraBold" onClick={handleToggle}>
+                  {showSignUp ? "Already have an account? Log In" : "Don't have an account? Sign Up"}
+                </button>
+              </div>
+              <SumbitWrapper className="flex">
+                <ButtonInput type="submit" value="Submit" className="pointer animate radius8" style={{ maxWidth: "220px" }} />
+              </SumbitWrapper>
             </div>
-        </Wrapper>
+          </div>
+        </div>
+      </div>
+    </Wrapper>
+
     );
 }
 
@@ -57,7 +74,7 @@ const Form = styled.form`
     box-shadow: none;
     border-bottom: 1px solid #707070;
     height: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   textarea {
     min-height: 100px;
