@@ -1,5 +1,8 @@
 import React, {useState} from "react";
 import styled from "styled-components";
+import axios from "axios";
+import { loginUser, registerUser } from "../../api/api";
+
 
 export default function Login() {
   const [showSignUp, setShowSignUp] = useState(false);
@@ -8,6 +11,33 @@ export default function Login() {
     setShowSignUp(!showSignUp);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+
+    try {
+      if (showSignUp) {
+        await axios.post("http://127.0.0.1:8000/api/register/", {
+          first_name: formData.get("fname"),
+          last_name: formData.get("lname"),
+          email: formData.get("email"),
+          phone: formData.get("phone"),
+          username: formData.get("uname"),
+          password: formData.get("subject"),
+        });
+      } else {
+        await axios.post("http://127.0.0.1:8000/api/login/", {
+          username: formData.get("uname"),
+          password: formData.get("subject"),
+        });
+      }
+
+    } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+    
     return(
       <Wrapper id="login">
       <div className="lightBg">
@@ -25,14 +55,18 @@ export default function Login() {
               <Form>
                 {showSignUp && (
                   <>
-                    <label className="font13">Name: </label>
+                  <label className="font13">First Name: </label>
                     <input type="text" id="fname" name="fname" className="font15 extraBold" />
-                    <label className="font13">Confirm Password: </label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" className="font15 extraBold" />
+                    <label className="font13">Last Name: </label>
+                    <input type="text" id="lname" name="lname" className="font15 extraBold" />
+                    <label className="font13">Email: </label>
+                    <input type="email" id="email" name="email" className="font15 extraBold" />
+                    <label className="font13">Phone No.: : </label>
+                    <input type="text" id="phone" name="phone" className="font15 extraBold" />
                   </>
                 )}
-                <label className="font13">Email: </label>
-                <input type="email" id="email" name="email" className="font15 extraBold" />
+                <label className="font13">Username: </label>
+                <input type="text" id="uname" name="uname" className="font15 extraBold" />
                 <label className="font13">Password: </label>
                 <input type="password" id="subject" name="subject" className="font15 extraBold" />
               </Form>

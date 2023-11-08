@@ -1,18 +1,17 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+// import { Helmet } from "react-helmet";
 // Screens
-import Landing from "./screens/Landing.jsx";
-
+import Home from "./screens/Landing.jsx";
+import Login from "./components/Sections/Login.jsx";
 export default function App() {
   return (
-    <>
-      <Helmet>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Khula:wght@400;600;800&display=swap" rel="stylesheet" />
-      </Helmet>
-      <Landing />
-    </>
+    <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          {/* <Route path="/profile" element={<Profile />} /> */}
+        </Routes>
+      </BrowserRouter>
   );
 }
-
