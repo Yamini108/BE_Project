@@ -70,9 +70,9 @@ export default function TopNavbar() {
           </UlWrapper>
           <UlWrapperRight className="flexNullCenter">
             <li className="semiBold font15 pointer flexCenter">
-              <Link activeClass="active" style={{ padding: "10px 15px" }} to="contact" spy={true} smooth={true} offset={-80}>
+              <a href="/profile" activeClass="active" style={{ padding: "10px 15px" }} to="" spy={true} smooth={true} offset={-80}>
                 My Profile
-              </Link>
+              </a>
             </li>
             <li className="semiBold font15 pointer">
             <a href="/login"  activeClass="active" style={{ padding: "10px 15px" }} spy={true} smooth={true} offset={-80}>

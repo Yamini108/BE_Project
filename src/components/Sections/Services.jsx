@@ -33,29 +33,29 @@ export default function Services() {
             <ServiceBoxWrapper>
               <ServiceBox
                 icon="roller"
-                title="Mutual Funds"
-                subtitle="Mutual Funds are a smart way to grow your money. They can help you achieve your financial goals as they have the potential to generate higher-than-inflation returns."
+                title="Long Term Investment"
+                subtitle=" 'Long term' refers to the extended period of time that an asset is held. Depending on the type of security, a long-term asset can be held for as little as one year or for as long as 10 years or more."
               />
             </ServiceBoxWrapper>
             <ServiceBoxWrapper>
               <ServiceBox
                 icon="monitor"
-                title="Fixed Deposit"
-                subtitle="A fixed deposit or FD is an investment product offered by banks and Non-Banking Finance Companies (NBFCs). In FDs, you invest for a set amount of time and get a fixed interest rate."
+                title="Short Term Investment"
+                subtitle="Short-term investments, also known as marketable securities or temporary investments, are financial investments that can easily be converted to cash, typically within 3-12 months."
               />
             </ServiceBoxWrapper>
             <ServiceBoxWrapper>
               <ServiceBox
                 icon="browser"
-                title="NPS"
-                subtitle="The National Pension System (NPS) is a voluntary and contributory pension scheme launched by the Government of India. It aims to provide retirement income to Indian citizens."
+                title="Retirement Planning"
+                subtitle="Retirement planning is a multistep process that evolves over time. To have a comfortable, secure—and fun—retirement, you need to build the financial cushion that will fund it all."
               />
             </ServiceBoxWrapper>
             <ServiceBoxWrapper>
               <ServiceBox
                 icon="printer"
-                title="Health Insurance"
-                subtitle="Health insurance protects you from unexpected, high medical costs. In case you or any family members covered under the policy is hospitalized, it company will pay for the hospital expenses up to the cover amount."
+                title="Insurance"
+                subtitle="Insurance is a contract, represented by a policy, in which a policyholder receives financial protection or reimbursement against losses from an insurance company."
               />
             </ServiceBoxWrapper>
           </ServiceBoxRow>

@@ -3,16 +3,24 @@ import styled from "styled-components";
 // Components
 import ProjectBox from "../Elements/ProjectBox";
 import FullButton from "../Buttons/FullButton";
+import { useNavigate } from 'react-router-dom';
 // Assets
 import ProjectImg1 from "../../assets/img/projects/1.png";
 import ProjectImg2 from "../../assets/img/projects/2.png";
 import ProjectImg3 from "../../assets/img/projects/3.png";
 import ProjectImg4 from "../../assets/img/projects/4.png";
-import ProjectImg5 from "../../assets/img/projects/5.png";
-import ProjectImg6 from "../../assets/img/projects/6.png";
+import ProjectImg5 from "../../assets/img/projects/5.jpg";
+import ProjectImg6 from "../../assets/img/projects/6.jpg";
 import AddImage2 from "../../assets/img/add/add2.png";
 
 export default function Projects() {
+  const navigate = useNavigate();
+
+
+const handleClick = () => {
+  navigate('/scheme-details')
+}
+
   return (
     <Wrapper id="projects">
       <div className="whiteBg">
@@ -30,22 +38,22 @@ export default function Projects() {
                 img={ProjectImg1}
                 title="Mutual Funds"
                 text="Mutual Funds are a smart way to grow your money. They can help you achieve your financial goals as they have the potential to generate higher-than-inflation returns."
-                action={() => alert("clicked")}
+                action={() => handleClick()}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg2}
-                title="Scheme Details"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                title="Fixed Deposit"
+                text="A fixed deposit or FD is an investment product offered by banks and Non-Banking Finance Companies (NBFCs). In FDs, you invest for a set amount of time and get a fixed interest rate."
                 action={() => alert("clicked")}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg3}
-                title="Scheme Details"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                title="National Pension System"
+                text="The National Pension System (NPS) is a voluntary and contributory pension scheme launched by the Government of India. It aims to provide retirement income to Indian citizens."
                 action={() => alert("clicked")}
               />
             </div>
@@ -54,24 +62,24 @@ export default function Projects() {
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg4}
-                title="Scheme Details"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                title="Health Insurance"
+                text="Health insurance protects you from unexpected, high medical costs. In case you or any family members covered under the policy is hospitalized, it company will pay for the hospital expenses up to the cover amount."
                 action={() => alert("clicked")}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg5}
-                title="Scheme Details"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                title="Gold Investment"
+                text="Gold investment can be done in many forms like buying jewelry, coins, bars, gold exchange-traded funds, Gold funds, sovereign gold bond scheme, etc."
                 action={() => alert("clicked")}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg6}
-                title="Scheme Details"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                title="Public Provident Fund"
+                text="PPF meaning can be simply stated as a long-term investment scheme, popular among individuals who want to earn high but stable returns. Proper safekeeping of the principal amount is the prime target of individuals opening a PPF account."
                 action={() => alert("clicked")}
               />
             </div>
