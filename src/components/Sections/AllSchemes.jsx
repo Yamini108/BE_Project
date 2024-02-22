@@ -3,6 +3,7 @@ import styled from "styled-components";
 // Components
 import ProjectBox from "../Elements/ProjectBox";
 import FullButton from "../Buttons/FullButton";
+import TopNavbar from "../Nav/TopNavbar";
 import { useNavigate } from 'react-router-dom';
 // Assets
 import ProjectImg1 from "../../assets/img/projects/1.png";
@@ -13,8 +14,9 @@ import ProjectImg5 from "../../assets/img/projects/5.jpg";
 import ProjectImg6 from "../../assets/img/projects/6.jpg";
 import AddImage2 from "../../assets/img/add/add2.png";
 
-export default function Projects() {
+export default function AllSchemes() {
   const navigate = useNavigate();
+
 const handleClick = () => {
   navigate('/scheme-details')
 }
@@ -23,11 +25,14 @@ const allSchemeHandleClick = () => {
 }
 
   return (
+    <>
+    <TopNavbar />
+
     <Wrapper id="projects">
       <div className="whiteBg">
         <div className="container">
           <HeaderInfo>
-            <h1 className="font40 extraBold">Scheme Details</h1>
+            <h1 className="font40 extraBold">All Available Schemes</h1>
             <p className="font13">
             Gain comprehensive insights into our meticulously curated investment schemes. Each scheme is thoughtfully designed to cater to diverse financial goals and risk appetites. 
             <br />Explore detailed information, historical performance, and expert analysis to make informed investment decisions tailored to your unique needs.
@@ -85,18 +90,15 @@ const allSchemeHandleClick = () => {
               />
             </div>
           </div>
-          <div className="row flexCenter">
-            <div style={{ margin: "50px 0", width: "200px" }}>
-              <FullButton title="Load More" action={() => allSchemeHandleClick()} />
-            </div>
-          </div>
         </div>
       </div>
     </Wrapper>
+    </>
   );
 }
 
 const Wrapper = styled.section`
+  margin-top: 5%;
   width: 100%;
 `;
 const HeaderInfo = styled.div`
