@@ -18,7 +18,7 @@ export default function AllSchemes() {
   const navigate = useNavigate();
 
 const handleClick = () => {
-  navigate('/scheme-details')
+  navigate('/mutual-funds')
 }
 const allSchemeHandleClick = () => {
     navigate('/all-schemes')

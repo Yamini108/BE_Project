@@ -6,7 +6,7 @@ import Home from "./screens/Landing.jsx";
 import Login from "./components/Sections/Login.jsx";
 import Profile from "./components/Profile/Profile.jsx";
 import AllSchemes from "./components/Sections/AllSchemes.jsx"
-import SchemeDetails from "./components/Sections/SchemeDetails.jsx";
+import MutualFunds from "./components/SchemeDetails/MutualFunds.jsx"
 export default function App() {
   return (
     <BrowserRouter>
@@ -15,7 +15,7 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/all-schemes" element={<AllSchemes /> }/>
-          <Route path="/scheme-details" element={<SchemeDetails />} />
+          <Route path="/mutual-funds" element={<MutualFunds />} />
         </Routes>
       </BrowserRouter>
   );
