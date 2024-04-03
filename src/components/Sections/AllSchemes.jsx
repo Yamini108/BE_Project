@@ -16,18 +16,29 @@ import AddImage2 from "../../assets/img/add/add2.png";
 
 export default function AllSchemes() {
   const navigate = useNavigate();
+  const handlemutualFunds = () => {
+    navigate("/mutual-funds");
+  };
+  const handleFixedDeposit = () => {
+    navigate("/fixed-deposit");
+  };
+  const handleNPS = () => {
+    navigate("/nps");
+  };
+  const handleHealthInsurance = () => {
+    navigate("/health-insurance");
+  };
+  const handleGoldInvestment = () => {
+    navigate("/gold-investment")
+  }
+  const handlePPF = () => {
+    navigate("/ppf")
+  }
 
-const handleClick = () => {
-  navigate('/mutual-funds')
-}
-const allSchemeHandleClick = () => {
-    navigate('/all-schemes')
-}
 
   return (
     <>
     <TopNavbar />
-
     <Wrapper id="projects">
       <div className="whiteBg">
         <div className="container">
@@ -40,11 +51,11 @@ const allSchemeHandleClick = () => {
           </HeaderInfo>
           <div className="row textCenter">
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-              <ProjectBox
+            <ProjectBox
                 img={ProjectImg1}
                 title="Mutual Funds"
                 text="Mutual Funds are a smart way to grow your money. They can help you achieve your financial goals as they have the potential to generate higher-than-inflation returns."
-                action={() => handleClick()}
+                action={() => handlemutualFunds()}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -52,7 +63,7 @@ const allSchemeHandleClick = () => {
                 img={ProjectImg2}
                 title="Fixed Deposit"
                 text="A fixed deposit or FD is an investment product offered by banks and Non-Banking Finance Companies (NBFCs). In FDs, you invest for a set amount of time and get a fixed interest rate."
-                action={() => alert("clicked")}
+                action={() => handleFixedDeposit()}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -60,7 +71,7 @@ const allSchemeHandleClick = () => {
                 img={ProjectImg3}
                 title="National Pension System"
                 text="The National Pension System (NPS) is a voluntary and contributory pension scheme launched by the Government of India. It aims to provide retirement income to Indian citizens."
-                action={() => alert("clicked")}
+                action={() => handleNPS()}
               />
             </div>
           </div>
@@ -70,7 +81,7 @@ const allSchemeHandleClick = () => {
                 img={ProjectImg4}
                 title="Health Insurance"
                 text="Health insurance protects you from unexpected, high medical costs. In case you or any family members covered under the policy is hospitalized, it company will pay for the hospital expenses up to the cover amount."
-                action={() => alert("clicked")}
+                action={() => handleHealthInsurance()}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -78,7 +89,7 @@ const allSchemeHandleClick = () => {
                 img={ProjectImg5}
                 title="Gold Investment"
                 text="Gold investment can be done in many forms like buying jewelry, coins, bars, gold exchange-traded funds, Gold funds, sovereign gold bond scheme, etc."
-                action={() => alert("clicked")}
+                action={() => handleGoldInvestment()}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -86,7 +97,7 @@ const allSchemeHandleClick = () => {
                 img={ProjectImg6}
                 title="Public Provident Fund"
                 text="PPF meaning can be simply stated as a long-term investment scheme, popular among individuals who want to earn high but stable returns. Proper safekeeping of the principal amount is the prime target of individuals opening a PPF account."
-                action={() => alert("clicked")}
+                action={() => handlePPF()}
               />
             </div>
           </div>
