@@ -1,18 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { loginUser } from "../../api/api";
+import { registerUser } from "../../api/api";
 
-export default function Login() {
+export default function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    const requestData = {
-      username: formData.get("uname"),
-      password: formData.get("subject"),
-    };
     try {
-      await loginUser(requestData.username, requestData.password);
-      // Handle successful login here
+      await registerUser({
+        first_name: formData.get("fname"),
+        last_name: formData.get("lname"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        username: formData.get("uname"),
+        password: formData.get("subject"),
+      });
+      // Handle successful registration here
     } catch (error) {
       console.error("Error:", error);
     }
@@ -21,6 +24,14 @@ export default function Login() {
   return (
     <Wrapper>
       <Form onSubmit={handleSubmit}>
+        <label>First Name:</label>
+        <input type="text" id="fname" name="fname" />
+        <label>Last Name:</label>
+        <input type="text" id="lname" name="lname" />
+        <label>Email:</label>
+        <input type="email" id="email" name="email" />
+        <label>Phone No.:</label>
+        <input type="text" id="phone" name="phone" />
         <label>Username:</label>
         <input type="text" id="uname" name="uname" />
         <label>Password:</label>

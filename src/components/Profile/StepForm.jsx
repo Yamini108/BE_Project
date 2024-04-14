@@ -359,14 +359,17 @@ const StepForm = ({ currentStep, handleNext, handlePrev }) => {
 
 const StyledStepForm = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  margin-top: 50px;
+
   .step-form {
     max-width: 500px;
     width: 100%;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    background-color: #f9f9f9;
   }
 
   h2 {
@@ -376,7 +379,7 @@ const StyledStepForm = styled.div`
   }
 
   .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 
   label {
@@ -391,6 +394,8 @@ const StyledStepForm = styled.div`
     padding: 8px;
     margin-bottom: 10px;
     box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
   }
 
   .form-buttons {

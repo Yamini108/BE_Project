@@ -9,9 +9,9 @@ import FaqSection from "../MutualFunds/FaqSection";
 export default function MutualFundsDetails() {
   return (
     <>
-    <MutualFundsComponent />
+    {/* <MutualFundsComponent />
     <MutualFundsInfo />
-    <MutualFundAdvantages />
+    <MutualFundAdvantages /> */}
     <Wrapper>
       <Container>
         <Content>
@@ -191,7 +191,7 @@ export default function MutualFundsDetails() {
         </Content>
       </Container>
     </Wrapper>
-    <FaqSection />
+    {/* <FaqSection /> */}
     </>
   );
 }
@@ -226,7 +226,7 @@ const Card = styled.div`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: text-wrap;
   width: 100%; /* Set width to 100% to ensure the card occupies full width */
-  max-width: 400px; /* Limit the maximum width of the card */
+  max-width: 1000px; /* Limit the maximum width of the card */
   display: flex;
   flex-direction: column; /* Ensure content stacks vertically inside the card */
 `;

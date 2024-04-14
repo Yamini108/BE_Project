@@ -57,23 +57,34 @@ const Wrapper = styled.section`
 
 const Container = styled.div`
   display: flex;
+  margin-left: 150px;
+  margin-right: 150px;
+
+  @media (max-width: 860px) {
+    margin-left: 0;
+    margin-right: 0;
+    flex-direction: column;
+  }
 `;
 
 const HeaderInfo = styled.div`
-  margin-left: 150px;
-  margin-right: 150px;
   margin-bottom: 50px;
+
   @media (max-width: 860px) {
-  text-align: center;
+    text-align: center;
   }
 `;
 
 const Sidebar = styled.div`
-  margin-left: 150px;
-  margin-right: 50px;
   width: 200px;
   padding: 20px;
   background-color: #f2f2f2;
+
+  @media (max-width: 860px) {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+  }
 `;
 
 const Content = styled.div`
