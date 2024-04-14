@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Login from "./Login";
 import SignUp from "./SignUp";
+import TopNavbar from "../Nav/TopNavbar";
 
 export default function LoginSignUp() {
   const [showSignUp, setShowSignUp] = useState(false);
@@ -11,10 +12,12 @@ export default function LoginSignUp() {
   };
 
   return (
+    <>
+    <TopNavbar />
     <Wrapper id="login">
-      <div className="lightBg">
-        <div className="container">
-          <HeaderInfo>
+      <LightBg>
+        <Container>
+          <HeaderInfo style={{ paddingTop: "30px" }}>
             <h1>Login/ Sign Up</h1>
             <p>
               Unlock the full potential of our platform. <br />
@@ -22,21 +25,20 @@ export default function LoginSignUp() {
               and expert guidance tailored just for you.
             </p>
           </HeaderInfo>
-          <div className="row" style={{ paddingBottom: "30px" }}>
-            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <Row style={{ paddingBottom: "30px" }}>
+            <Column>
               {showSignUp ? <SignUp /> : <Login />}
-              <div>
-                <button onClick={handleToggle}>
-                  {showSignUp
-                    ? "Already have an account? Log In"
-                    : "Don't have an account? Sign Up"}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              <ToggleButton onClick={handleToggle}>
+                {showSignUp
+                  ? "Already have an account? Log In"
+                  : "Don't have an account? Sign Up"}
+              </ToggleButton>
+            </Column>
+          </Row>
+        </Container>
+      </LightBg>
     </Wrapper>
+    </>
   );
 }
 
@@ -44,51 +46,47 @@ const Wrapper = styled.section`
   width: 100%;
   padding: 50px 0;
 `;
+const LightBg = styled.div`
+  background-color: #f5f5f5;
+`;
+const Container = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+`;
 const HeaderInfo = styled.div`
-  margin-bottom: 50px;
-  @media (max-width: 860px) {
-    text-align: center;
+  // margin-bottom: 50px;
+  margin-top: 40px;
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: black;
+    // margin-bottom: 20px;
+  }
+  p {
+    font-size: 13px;
+    color: black;
+    line-height: 1.5;
+    margin-bottom: 0;
   }
 `;
-const Form = styled.form`
-  padding: 0px 0 30px 0;
-  input,
-  textarea {
-    width: 100%;
-    background-color: transparent;
-    border: 0px;
-    outline: none;
-    box-shadow: none;
-    border-bottom: 1px solid #707070;
-    height: 30px;
-    margin-bottom: 10px;
-  }
-  textarea {
-    min-height: 100px;
-  }
-  @media (max-width: 860px) {
-    padding: 30px 0;
-  }
+const Row = styled.div`
+  display: flex;
+  flex-wrap: wrap;
 `;
-const ButtonInput = styled.input`
-  border: 1px solid #7620ff;
-  background-color: #7620ff;
-  width: 100%;
-  padding: 15px;
-  outline: none;
-  color: #fff;
-  :hover {
-    background-color: #580cd2;
-    border: 1px solid #7620ff;
-    color: #fff;
-  }
-  @media (max-width: 991px) {
-    margin: 0 auto;
-  }
+const Column = styled.div`
+  // flex: 1;
+  max-width: 100%;
 `;
-const SumbitWrapper = styled.div`
-  @media (max-width: 991px) {
-    width: 100%;
-    margin-bottom: 50px;
+const ToggleButton = styled.button`
+  border: none;
+  background-color: transparent;
+  color: #7620ff;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0px;
+  &:hover {
+    text-decoration: underline;
   }
 `;

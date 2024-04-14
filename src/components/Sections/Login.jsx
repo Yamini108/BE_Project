@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { loginUser } from "../../api/api";
 
@@ -21,65 +21,63 @@ export default function Login() {
   return (
     <Wrapper>
       <Form onSubmit={handleSubmit}>
-        <label>Username:</label>
-        <input type="text" id="uname" name="uname" />
-        <label>Password:</label>
-        <input type="password" id="subject" name="subject" />
-        <button type="submit">Submit</button>
+        <Label htmlFor="uname">Username:</Label>
+        <Input type="text" id="uname" name="uname" />
+        <Label htmlFor="subject">Password:</Label>
+        <Input type="password" id="subject" name="subject" />
+        <Button type="submit">Submit</Button>
       </Form>
     </Wrapper>
   );
 }
 
-const Wrapper = styled.section`
+const Wrapper = styled.div`
   width: 100%;
   padding: 50px 0;
 `;
-const HeaderInfo = styled.div`
-  margin-bottom: 50px;
-  @media (max-width: 860px) {
-    text-align: center;
-  }
-`;
 const Form = styled.form`
-  padding: 0px 0 30px 0;
-  input,
-  textarea {
-    width: 100%;
-    background-color: transparent;
-    border: 0px;
-    outline: none;
-    box-shadow: none;
-    border-bottom: 1px solid #707070;
-    height: 30px;
-    margin-bottom: 10px;
-  }
-  textarea {
-    min-height: 100px;
-  }
-  @media (max-width: 860px) {
-    padding: 30px 0;
-  }
+padding: 0px 0 30px 0;
+input,
+textarea {
+  width: 100%;
+  background-color: transparent;
+  border: 0px;
+  outline: none;
+  box-shadow: none;
+  border-bottom: 1px solid #707070;
+  height: 30px;
+  // margin-bottom: 10px;
+}
+textarea {
+  min-height: 100px;
+}
 `;
-const ButtonInput = styled.input`
+const Label = styled.label`
+  margin-bottom: 5px;
+  font-size: 13px;
+  color: black;
+`;
+const Input = styled.input`
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #707070;
+  border-radius: 8px;
+  outline: none;
+`;
+const Button = styled.button`
   border: 1px solid #7620ff;
   background-color: #7620ff;
   width: 100%;
   padding: 15px;
   outline: none;
   color: #fff;
-  :hover {
+  cursor: pointer;
+  &:hover {
     background-color: #580cd2;
     border: 1px solid #7620ff;
     color: #fff;
   }
   @media (max-width: 991px) {
     margin: 0 auto;
-  }
-`;
-const SumbitWrapper = styled.div`
-  @media (max-width: 991px) {
-    width: 100%;
-    margin-bottom: 50px;
   }
 `;
