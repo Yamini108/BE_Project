@@ -150,5 +150,3 @@ const DotsWrapper = styled.div`
     display: none;
   }
 `;
-
-

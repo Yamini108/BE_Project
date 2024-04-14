@@ -5,7 +5,7 @@ import StepForm from "./StepForm";
 
 export default function Profile() {
   const [currentStep, setCurrentStep] = useState(0);
-  const steps = ["1. Personal Details", "2. Income Details", "3. Dependency Details", "4. Dependent Member Details", "5. Children Details", "6. Expenditure Details"];
+  const steps = ["1. Personal Details", "2. Income Details", "3. Dependency Details", "4. Dependent Member Details", "5. Children Details", "6. Expenditure Details", "7. Goal Details"];
 
   const handleNext = () => {
     setCurrentStep(currentStep + 1);
